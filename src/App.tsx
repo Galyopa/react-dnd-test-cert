@@ -1,26 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { FC } from "react";
+import { Navigate, Route, Routes } from "react-router-dom";
+import { AddCertificate } from "./components/AddCertificate";
+import { CertificatesList } from "./components/CertificatesList";
+import { СertificateInfo } from "./components/СertificateInfo";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
-export default App;
+export const App: FC = () => (
+  <div className="page__container">
+    <Routes>
+      <Route path="/" element={<CertificatesList />}>
+        <Route
+          index
+          element={
+            <div className="certificates__empty">
+              <p>Виберіть сертифікат, щоб переглянути інформацію</p>
+            </div>
+          }
+        />
+        <Route path="/add" element={<AddCertificate />} />
+        <Route path=":commonName" element={<СertificateInfo />} />
+      </Route>
+      <Route path="home" element={<Navigate to="/" />} />
+    </Routes>
+  </div>
+);

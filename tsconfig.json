@@ -18,9 +18,20 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "typeRoots": [
+      "node_modules/@types",
+      "src/local-types"
+    ],
+    "paths":{
+      "@lapo/asn1js": ["./src/local-types/lapo__asn1js"]
+    }
   },
   "include": [
     "src"
-  ]
+  ],
+  "exclude": [
+    "node_modules",
+    "src/local-types/**"
+]
 }
