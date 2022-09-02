@@ -1,30 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
-
-interface Certificate {
-  commonName: string,
-  issuerName: string,
-}
+import { Certificate } from '../../react-app-env';
 
 type Certificates = {
   certificates: Certificate[];
 }
 
 const initialState: Certificates = {
-  certificates: [
-  {
-    commonName: 'Нестеренко',
-    issuerName: 'НАц бАнк'
-  },
-  {
-    commonName: 'Іванов',
-    issuerName: 'Приват'
-  },
-  {
-    commonName: 'Колома',
-    issuerName: 'Моно'
-  },
-],
+  certificates: [],
 }
 
 const certificatesSlice = createSlice({

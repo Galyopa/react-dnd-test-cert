@@ -1,0 +1,17 @@
+.drag-area {
+  height: 400px;
+  width: 100%;
+  border: 2px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 80px;
+
+  &--active {
+    border: 2px dashed;
+  }
+
+  &__error {
+    color: #f14668;
+  }
+}

@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { HashRouter } from 'react-router-dom';
 import { store } from './app/app';
 import { saveState } from './app/localStorage';
-import './index.css';
+import './index.scss';
 
 store.subscribe(
   () => {
